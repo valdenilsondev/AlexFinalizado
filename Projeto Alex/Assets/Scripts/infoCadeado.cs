@@ -9,15 +9,16 @@ public class infoCadeado : MonoBehaviour
     public GameObject[] ponteiroInformacao;
     public GameObject[] infoCadeadoPainelMissoes;
     public GameObject[] infoCadeadoMissoesIncompletas;
-    public GameObject[] puzzle01;
+   
+
     public GameObject[] informacao;
 
 
 
-    bool verificarInformacaoAberto;
-    bool verificarInformacaoFechada;
-    bool isMensagemInformacao;
-    bool isCadeadoInfo;
+  public   bool verificarInformacaoAberto;
+  public   bool verificarInformacaoFechada;
+  public   bool isMensagemInformacao;
+  public  bool isCadeadoInfo;
 
     void Start()
     {
@@ -41,7 +42,11 @@ public class infoCadeado : MonoBehaviour
             objetos.SetActive(false);
         }
 
+       
+
         _gameManager = FindObjectOfType(typeof(GamerManager)) as GamerManager;
+
+       
 
 
     }
@@ -73,7 +78,7 @@ public class infoCadeado : MonoBehaviour
 
             infoCadeadoPainelMissoes[0].SetActive(false);
 
-            for (int i = 0; i <= 3; i++)
+            for (int i = 0; i <= 2; i++)
             {
                 ponteiroInformacao[i].SetActive(true);
             }
@@ -81,8 +86,7 @@ public class infoCadeado : MonoBehaviour
 
             verificarInformacaoFechada = true;
         }
-
-        if (isMensagemInformacao && _gameManager.quantDesafios01 < 2)
+        if (isMensagemInformacao && _gameManager.quantDesafios01 < 2 && verificarInformacaoAberto == true)
         {
             infoCadeadoMissoesIncompletas[0].SetActive(true);
         }
@@ -92,10 +96,17 @@ public class infoCadeado : MonoBehaviour
             infoCadeadoMissoesIncompletas[0].SetActive(false);
         }
 
-        if (_gameManager.quantDesafios01 == 3)
-        {
-            puzzle01[0].SetActive(true);
+        if (isMensagemInformacao && _gameManager.quantDesafios01 == 3) {
+
+           _gameManager.painelDesafio.SetActive(true);
         }
+        else if (isMensagemInformacao==false && _gameManager.quantDesafios01 == 3) {
+
+            _gameManager.painelDesafio.SetActive(false);
+        }
+
+
+
 
 
     }
@@ -109,5 +120,9 @@ public class infoCadeado : MonoBehaviour
         isCadeadoInfo = false;
     }
 
+
+    public void missao() {
+        
+    }
 
 }

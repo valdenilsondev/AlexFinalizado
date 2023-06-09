@@ -49,7 +49,7 @@ public class InteracaoObjetos : MonoBehaviour
 
         }
 
-        if (isPainel && _gameManager.quantDesafios01)
+        if (isPainel )
         {
 
             painelInfo[0].SetActive(true);
