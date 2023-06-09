@@ -6,11 +6,17 @@ public class InteracaoObjetos : MonoBehaviour
 {
 
     private GamerManager _gameManager;
+
+    private infoCadeado _infoCadeado;
+
+
     public GameObject[] painelInfo;
 
     bool isVerificarToque;
     bool isPainel;
     bool isPrimeirDesafio;
+
+    public bool isInfoAberto;
 
 
 
@@ -25,6 +31,10 @@ public class InteracaoObjetos : MonoBehaviour
 
         _gameManager = FindObjectOfType(typeof(GamerManager)) as GamerManager;
 
+        _infoCadeado = FindObjectOfType(typeof(infoCadeado)) as infoCadeado;
+
+        isInfoAberto = true;
+
     }
 
     // Update is called once per frame
@@ -32,7 +42,7 @@ public class InteracaoObjetos : MonoBehaviour
     {
         if (isVerificarToque)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && _infoCadeado.isLerInformacao)
             {
                 isPainel = !isPainel;
             }
@@ -41,23 +51,26 @@ public class InteracaoObjetos : MonoBehaviour
 
         }
 
-        if (isPainel && isPrimeirDesafio == false)
+        if (isPainel && isPrimeirDesafio == false && _infoCadeado.isLerInformacao)
         {
             _gameManager.quantDesafios01 += 1;
             painelInfo[0].SetActive(true);
             isPrimeirDesafio = true;
+            isInfoAberto = true;
 
         }
 
-        if (isPainel )
+        if (isPainel && _infoCadeado.isLerInformacao)
         {
 
             painelInfo[0].SetActive(true);
+            isInfoAberto = false ;
 
         }
         else if (isPainel == false)
         {
             painelInfo[0].SetActive(false);
+            isInfoAberto =true;
 
         }
 

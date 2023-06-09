@@ -30,6 +30,12 @@ public class GamerManager : MonoBehaviour {
 
     public GameObject painelDesafio;
 
+
+
+    public GameObject missao;
+    public GameObject missao1;
+
+    public GameObject[] ponteiro;
     
 
    
@@ -47,6 +53,10 @@ public class GamerManager : MonoBehaviour {
         _gamerManager.painelDesafio.SetActive(false);
 
         painelPrincipal.SetActive(false);
+
+        missao1.SetActive(false);
+
+       
     }
 
 
@@ -150,6 +160,7 @@ public class GamerManager : MonoBehaviour {
             painelDesafio.SetActive(false);
 
 
+
         }
         else if (contButoesApertados != 4) {
 
@@ -176,13 +187,30 @@ public class GamerManager : MonoBehaviour {
 
     public void exitPainel() {
         painelPrincipal.SetActive(false);
-        painelDesafio.SetActive(false);
+        
         if (contButoesApertados == 4) {
             cadeados[0].SetActive(false);
             oleo[0].SetActive(false);
             _infoCadeado.ponteiroInformacao[0].SetActive(false);
             _infoCadeado.ponteiroInformacao[1].SetActive(false);
             _infoCadeado.ponteiroInformacao[2].SetActive(false);
+
+            ponteiro[0].SetActive(false);
+            ponteiro[1].SetActive(false);
+            ponteiro[2].SetActive(false);
+
+           missao.SetActive(false);
+
+            missao1.SetActive(true);
+
+            //painelDesafio.SetActive(false);
+            
+            quantDesafios01 = 0;
+
+            contButoesApertados = 0;
+            quantRespostas = 0;
+
+
         }
 
 

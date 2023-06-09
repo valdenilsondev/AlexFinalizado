@@ -5,6 +5,7 @@ using UnityEngine;
 public class infoCadeado : MonoBehaviour
 {
     private GamerManager _gameManager;
+    private InteracaoObjetos _interacaoObjetos;
 
     public GameObject[] ponteiroInformacao;
     public GameObject[] infoCadeadoPainelMissoes;
@@ -14,11 +15,14 @@ public class infoCadeado : MonoBehaviour
     public GameObject[] informacao;
 
 
+    public   bool verificarInformacaoAberto;
+    public   bool verificarInformacaoFechada;
+    public   bool isMensagemInformacao;
+    public  bool isCadeadoInfo;
 
-  public   bool verificarInformacaoAberto;
-  public   bool verificarInformacaoFechada;
-  public   bool isMensagemInformacao;
-  public  bool isCadeadoInfo;
+    public bool isLerInformacao;
+
+    public GameObject painelDesafio;
 
     void Start()
     {
@@ -46,9 +50,13 @@ public class infoCadeado : MonoBehaviour
 
         _gameManager = FindObjectOfType(typeof(GamerManager)) as GamerManager;
 
-       
+        _interacaoObjetos = FindObjectOfType(typeof(InteracaoObjetos)) as InteracaoObjetos;
 
+        isLerInformacao = false;
 
+        _gameManager.painelDesafio.SetActive(false);
+
+        painelDesafio.SetActive(false);
     }
 
     // Update is called once per frame
@@ -56,7 +64,7 @@ public class infoCadeado : MonoBehaviour
     {
         if (isCadeadoInfo)
         {
-            if (Input.GetButtonDown("Fire1"))
+            if (Input.GetButtonDown("Fire1") && _interacaoObjetos.isInfoAberto == true)
             {
                 isMensagemInformacao = !isMensagemInformacao;
             }
@@ -71,10 +79,12 @@ public class infoCadeado : MonoBehaviour
 
             verificarInformacaoFechada = true;
 
+            isLerInformacao = false;
+
         }
         else if (isMensagemInformacao == false && verificarInformacaoFechada == true)
         {
-
+            isLerInformacao = true;
 
             infoCadeadoPainelMissoes[0].SetActive(false);
 
@@ -89,20 +99,27 @@ public class infoCadeado : MonoBehaviour
         if (isMensagemInformacao && _gameManager.quantDesafios01 < 2 && verificarInformacaoAberto == true)
         {
             infoCadeadoMissoesIncompletas[0].SetActive(true);
+            isLerInformacao = false;
+
         }
 
         else if (isMensagemInformacao == false && _gameManager.quantDesafios01 < 2)
         {
             infoCadeadoMissoesIncompletas[0].SetActive(false);
+
+            isLerInformacao = true;
+
         }
 
         if (isMensagemInformacao && _gameManager.quantDesafios01 == 3) {
 
-           _gameManager.painelDesafio.SetActive(true);
+            // _gameManager.painelDesafio.SetActive(true);
+            painelDesafio.SetActive(true);
         }
         else if (isMensagemInformacao==false && _gameManager.quantDesafios01 == 3) {
 
-            _gameManager.painelDesafio.SetActive(false);
+            //_gameManager.painelDesafio.SetActive(false);
+            painelDesafio.SetActive(false);
         }
 
 
