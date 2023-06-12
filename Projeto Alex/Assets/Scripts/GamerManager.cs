@@ -36,6 +36,8 @@ public class GamerManager : MonoBehaviour {
     public GameObject missao1;
 
     public GameObject[] ponteiro;
+
+    
     
 
    

@@ -45,6 +45,8 @@ public class InteracaoObjetos : MonoBehaviour
             if (Input.GetButtonDown("Fire1") && _infoCadeado.isLerInformacao)
             {
                 isPainel = !isPainel;
+
+             
             }
 
 
