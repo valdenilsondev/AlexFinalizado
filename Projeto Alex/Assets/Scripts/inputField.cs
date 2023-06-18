@@ -14,15 +14,106 @@ public class inputField : MonoBehaviour
     public bool isVerificar;
     public List<int> idAtual;
     public List<string> nomeCompleto;
-
     public string letra;
 
+    public GameObject painelJogo;
+    public GameObject painelGameOver;
+    public GameObject painelTelaInicialJogo;
+    public GameObject painelCongratulations;
+    public GameObject painelInstrucoes;
 
 
+    public int tempoInicial;
+    public int tempoAtual;
+    public float segundos;
+    public int Minutos;
+    public int resto;
+    public float descrescimoSegundo;
+    public int segundosAtualizados;
+    public TextMeshProUGUI txtMinutos;
+    public TextMeshProUGUI txtSegundos;
+    bool tempo;
+    public int tempoNovo;
+    public float decrescimotempoMinutos;
+    public float descrecimoMinutos;
+
+    public bool iniciarCacaPalavra;
 
     private void Update()
     {
         letra = _inputField[identificadorId].text;
+
+
+
+        if (iniciarCacaPalavra == true) {
+
+            descrescimoSegundo += Time.deltaTime;
+
+            descrecimoMinutos += Time.deltaTime;
+
+            if (decrescimotempoMinutos > 0) {
+
+                if (tempoAtual > 60 && tempo == false) {
+
+                    resto = tempoAtual % 60;
+
+                    Minutos = (int)(tempoAtual - resto) / 60;
+
+                    segundos = (int)resto;
+
+                    txtMinutos.text = Minutos.ToString();
+
+                    txtSegundos.text = segundos.ToString();
+
+                    tempo = true;
+                }
+
+                segundosAtualizados = (int)segundos - (int)descrescimoSegundo;
+
+                if (segundosAtualizados <= 0) {
+
+                    Minutos--;
+                    segundos = 60;
+
+                    descrescimoSegundo = 0;
+
+                }
+
+                else
+
+                if (segundos < 0 && Minutos < 0) {
+
+                    Minutos = 0;
+
+                    segundos = 0;
+                }
+
+                txtSegundos.text = segundosAtualizados.ToString("00");
+
+                txtMinutos.text = Minutos.ToString("0");
+
+            }
+            else if (decrescimotempoMinutos < 0) {
+
+                Minutos = 0;
+
+                segundos = 0;
+
+                decrescimotempoMinutos = 0;
+
+                txtSegundos.text = segundosAtualizados.ToString("00");
+
+                txtMinutos.text = Minutos.ToString("0");
+
+                painelGameOver.SetActive(true);
+
+                iniciarCacaPalavra = false;
+
+            }
+
+            decrescimotempoMinutos = tempoAtual - descrecimoMinutos;
+
+        }
     }
 
 
@@ -42,14 +133,12 @@ public class inputField : MonoBehaviour
     public void Checar()
     {
 
-
         if (_inputField[26].text == "R")
         {
          
             _inputField[26].text = "R";
             _inputField[26].image.color = Color.green;
-            
-
+  
         }else if (_inputField[26].text != "R")
         {
            // _inputField[26].text = "R";
@@ -257,19 +346,155 @@ public class inputField : MonoBehaviour
 
        
 
-        if (_inputField[18].text == "R")
+        if (_inputField[18].text == "I")
         {
             _inputField[18].image.color = Color.green;
-            _inputField[18].text = "R";
+            _inputField[18].text = "I";
 
         }
-        else if (_inputField[18].text != "R")
+        else if (_inputField[18].text != "I")
         {
            // _inputField[18].text = " ";
             _inputField[18].image.color = Color.red;
         }
 
+
+        if (_inputField[17].text == "N") {
+            _inputField[17].image.color = Color.green;
+            _inputField[17].text = "N";
+
+        }
+        else if (_inputField[17].text != "N") {
+            // _inputField[18].text = " ";
+            _inputField[17].image.color = Color.red;
+        }
+
+        if (_inputField[16].text == "S") {
+            _inputField[16].image.color = Color.green;
+            _inputField[16].text = "S";
+
+        }
+        else if (_inputField[16].text != "S") {
+            // _inputField[18].text = " ";
+            _inputField[16].image.color = Color.red;
+        }
+
+        if (_inputField[15].text == "E") {
+            _inputField[15].image.color = Color.green;
+            _inputField[15].text = "E";
+
+        }
+        else if (_inputField[15].text != "E") {
+            // _inputField[18].text = " ";
+            _inputField[15].image.color = Color.red;
+        }
+
+        if (_inputField[14].text == "T") {
+            _inputField[14].image.color = Color.green;
+            _inputField[14].text = "T";
+
+        }
+        else if (_inputField[14].text != "T") {
+            // _inputField[18].text = " ";
+            _inputField[14].image.color = Color.red;
+        }
+
+        if (_inputField[13].text == "O") {
+            _inputField[13].image.color = Color.green;
+            _inputField[13].text = "O";
+
+        }
+        else if (_inputField[13].text != "O") {
+            // _inputField[18].text = " ";
+            _inputField[13].image.color = Color.red;
+        }
+
+
+        if (_inputField[12].text == "S") {
+            _inputField[12].image.color = Color.green;
+            _inputField[12].text = "S";
+
+        }
+        else if (_inputField[12].text != "S") {
+            // _inputField[18].text = " ";
+            _inputField[12].image.color = Color.red;
+        }
+
+        if (_inputField[11].text == "E") {
+            _inputField[11].image.color = Color.green;
+            _inputField[11].text = "E";
+
+        }
+        else if (_inputField[11].text != "E") {
+            // _inputField[18].text = " ";
+            _inputField[11].image.color = Color.red;
+        }
+
+        if (_inputField[10].text == "R") {
+            _inputField[10].image.color = Color.green;
+            _inputField[10].text = "R";
+
+        }
+        else if (_inputField[10].text != "R") {
+            // _inputField[18].text = " ";
+            _inputField[10].image.color = Color.red;
+        }
+
+        if (_inputField[9].text == "A") {
+            _inputField[9].image.color = Color.green;
+            _inputField[9].text = "A";
+
+        }
+        else if (_inputField[9].text != "A") {
+            // _inputField[18].text = " ";
+            _inputField[9].image.color = Color.red;
+        }
+
+
+        if (_inputField[19].text == "O") {
+            _inputField[19].image.color = Color.green;
+            _inputField[19].text = "O";
+
+        }
+        else if (_inputField[19].text != "O") {
+            // _inputField[18].text = " ";
+            _inputField[19].image.color = Color.red;
+        }
+
+
+
     }
+
+    public void fecharPainelJogo() {
+        painelJogo.SetActive(false);
+    }
+
+    public void fecharPainelCongratulations() {
+        painelTelaInicialJogo.SetActive(false);
+    }
+
+
+    public void fecharPainelGameOver() {
+        painelGameOver.SetActive(false);
+        iniciarCacaPalavra = true;
+    }
+
+    public void iniciarJogo() {
+
+        painelTelaInicialJogo.SetActive(false);
+
+        iniciarCacaPalavra = true;
+
+    }
+
+    public void iniciarInstrucoes() {
+        painelInstrucoes.SetActive(true);
+    }
+
+    public void fecharPainelInstrucoes() {
+        painelInstrucoes.SetActive(false);
+    }
+ 
 
 
 

@@ -34,6 +34,7 @@ public class GamerManager : MonoBehaviour {
 
     public GameObject missao;
     public GameObject missao1;
+    public GameObject missao2;
 
     public GameObject[] ponteiro;
 
@@ -44,6 +45,7 @@ public class GamerManager : MonoBehaviour {
 
 
     private void Start() {
+
         painelAcerto.SetActive(false);
         painelErro.SetActive(false);
         msnLimiteQuantRespostas.SetActive(false);

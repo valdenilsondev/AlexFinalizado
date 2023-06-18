@@ -95,9 +95,32 @@ public class Sprites : MonoBehaviour {
     public GameObject painelCongratulations;
 
     public bool fecharPainel;
+
+    private infoCadeado _infoCadeado;
+
+    private GamerManager _GameManager;
+
+    public GameObject[] cadeados;
+
+    public GameObject[] oleo;
+
+    public GameObject painelDesafio;
+
+
+
+    public GameObject missao;
+    public GameObject missao1;
+
+  
+
+
     // Start is called before the first frame update
     void Start() {
         _item = FindObjectOfType(typeof(ItemId)) as ItemId;
+
+        _infoCadeado = FindObjectOfType(typeof(infoCadeado)) as infoCadeado;
+
+        _GameManager = FindObjectOfType(typeof(GamerManager)) as GamerManager;
 
         tempoNovo = tempoAtual;
 
@@ -233,6 +256,27 @@ public class Sprites : MonoBehaviour {
     public void retornarCleanCity() {
 
         painelPulzze.SetActive(false);
+        
+        _infoCadeado.ponteiroInformacao[0].SetActive(false);
+        _infoCadeado.ponteiroInformacao[1].SetActive(false);
+        _infoCadeado.ponteiroInformacao[2].SetActive(false);
+
+        _GameManager.ponteiro[3].SetActive(false);
+        _GameManager.ponteiro[4].SetActive(false);
+        _GameManager.ponteiro[5].SetActive(false);
+
+
+
+        _GameManager.missao.SetActive(false);
+
+        _GameManager.missao1.SetActive(false);
+
+        _GameManager.missao2.SetActive(true);
+
+        _GameManager.quantDesafios01 = 0;
+        _GameManager.contButoesApertados = 0;
+        _GameManager.quantRespostas = 0;
+
 
     }
 
