@@ -10,17 +10,19 @@ public class moverPainel : MonoBehaviour
     public Transform posicaoPainel;
     public bool isAtivo;
     public bool isInitivo;
+
+    public GameObject painelMenu;
     
     // Start is called before the first frame update
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (isAtivo) {
+      /*  if (isAtivo) {
             posicaoPainel.transform.position = Vector3.MoveTowards(posicaoPainel.transform.position, posicaoFinal.transform.position, 1f);
 
             
@@ -30,16 +32,16 @@ public class moverPainel : MonoBehaviour
             posicaoPainel.transform.position = Vector3.MoveTowards(posicaoPainel.transform.position, posicaoInicial.transform.position, 1f);
            
         }
+      */
+
     }
 
     public void ativarBotao() {
 
-        isAtivo = true;
-        isInitivo = false;
+       painelMenu.gameObject.GetComponent<Animator>().SetTrigger("abrir");
     }
     public void desativarBotao() {
-        isInitivo = true;
-        isAtivo = false;
+        painelMenu.gameObject.GetComponent<Animator>().SetTrigger("fechar");
     }
 
 }

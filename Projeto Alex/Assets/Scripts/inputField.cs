@@ -39,10 +39,23 @@ public class inputField : MonoBehaviour
 
     public bool iniciarCacaPalavra;
 
+    private infoCadeado _infoCadeado;
+
+    private GamerManager _GameManager;
+
+    private void Start() {
+        _infoCadeado = FindObjectOfType(typeof(infoCadeado)) as infoCadeado;
+
+        _GameManager = FindObjectOfType(typeof(GamerManager)) as GamerManager;
+
+    }
+
     private void Update()
     {
         letra = _inputField[identificadorId].text;
 
+
+      
 
 
         if (iniciarCacaPalavra == true) {
@@ -467,6 +480,34 @@ public class inputField : MonoBehaviour
 
     public void fecharPainelJogo() {
         painelJogo.SetActive(false);
+
+        _infoCadeado.ponteiroInformacao[0].SetActive(false);
+        _infoCadeado.ponteiroInformacao[1].SetActive(false);
+        _infoCadeado.ponteiroInformacao[2].SetActive(false);
+
+        _GameManager.ponteiro[6].SetActive(false);
+        _GameManager.ponteiro[7].SetActive(false);
+        _GameManager.ponteiro[8].SetActive(false);
+
+
+
+        _GameManager.missao.SetActive(false);
+
+
+        _GameManager.missao1.SetActive(false);
+
+
+        _GameManager.missao2.SetActive(false);
+
+
+        _GameManager.missao3.SetActive(true);
+
+
+        _GameManager.quantDesafios01 = 0;
+        _GameManager.contButoesApertados = 0;
+        _GameManager.quantRespostas = 0;
+
+
     }
 
     public void fecharPainelCongratulations() {

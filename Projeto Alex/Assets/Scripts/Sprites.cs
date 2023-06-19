@@ -108,9 +108,6 @@ public class Sprites : MonoBehaviour {
 
 
 
-    public GameObject missao;
-    public GameObject missao1;
-
   
 
 

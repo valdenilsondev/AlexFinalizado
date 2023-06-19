@@ -35,10 +35,17 @@ public class GerenciadorPergunteRapida : MonoBehaviour
     public float descrecimoMinutos;
 
     public bool iniciarCacaPalavra;
+
+
+    private infoCadeado _infoCadeado;
+
+    private GamerManager _GameManager;
     // Start is called before the first frame update
     void Start()
     {
-        
+        _infoCadeado = FindObjectOfType(typeof(infoCadeado)) as infoCadeado;
+
+        _GameManager = FindObjectOfType(typeof(GamerManager)) as GamerManager;
     }
 
     // Update is called once per frame
@@ -125,6 +132,33 @@ public class GerenciadorPergunteRapida : MonoBehaviour
 
     public void fecharPainelJogo() {
         painelPerguntaRapida.SetActive(false);
+        _infoCadeado.ponteiroInformacao[0].SetActive(false);
+        _infoCadeado.ponteiroInformacao[1].SetActive(false);
+        _infoCadeado.ponteiroInformacao[2].SetActive(false);
+
+        _GameManager.ponteiro[9].SetActive(false);
+        _GameManager.ponteiro[10].SetActive(false);
+        _GameManager.ponteiro[11].SetActive(false);
+
+
+
+        _GameManager.missao.SetActive(false);
+
+
+        _GameManager.missao1.SetActive(false);
+
+
+        _GameManager.missao2.SetActive(false);
+
+
+        _GameManager.missao3.SetActive(false);
+
+        _GameManager.missao4.SetActive(true);
+
+
+        _GameManager.quantDesafios01 = 0;
+        _GameManager.contButoesApertados = 0;
+        _GameManager.quantRespostas = 0;
     }
 
     public void fecharPainelCongratulations() {

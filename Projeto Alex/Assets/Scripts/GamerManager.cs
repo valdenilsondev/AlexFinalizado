@@ -35,13 +35,17 @@ public class GamerManager : MonoBehaviour {
     public GameObject missao;
     public GameObject missao1;
     public GameObject missao2;
+    public GameObject missao3;
+    public GameObject missao4;
+
 
     public GameObject[] ponteiro;
 
-    
-    
 
-   
+
+
+    public GameObject credtos;
+    private bool isCreditos;
 
 
     private void Start() {
@@ -240,7 +244,15 @@ public class GamerManager : MonoBehaviour {
     }
 
 
-
+    public void ativarDesativasCreditos() {
+        if(isCreditos == false) {
+            credtos.SetActive(true);
+            isCreditos = true;
+        }else if (isCreditos) {
+            credtos.SetActive(false);
+            isCreditos = false;
+        }
+    }
 
 
 
