@@ -245,15 +245,22 @@ public class GamerManager : MonoBehaviour {
 
 
     public void ativarDesativasCreditos() {
-        if(isCreditos == false) {
+       
             credtos.SetActive(true);
-            isCreditos = true;
-        }else if (isCreditos) {
-            credtos.SetActive(false);
-            isCreditos = false;
-        }
+         
+        
     }
 
+    public void desativarCreditos()
+    {
+        credtos.SetActive(false);
+    }
+
+
+    public void fecharJogo()
+    {
+        Application.Quit();
+    }
 
 
 }
