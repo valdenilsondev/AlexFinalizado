@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GamerManager : MonoBehaviour {
 
@@ -45,7 +46,7 @@ public class GamerManager : MonoBehaviour {
 
 
     public GameObject credtos;
-    private bool isCreditos;
+    public GameObject instrucoes;
 
 
     private void Start() {
@@ -64,13 +65,18 @@ public class GamerManager : MonoBehaviour {
 
         missao1.SetActive(false);
 
+        credtos.SetActive(false);
+        instrucoes.SetActive(false);
+
        
     }
 
 
 
     private void Update() {
-
+        if (Input.anyKey) {
+            SceneManager.LoadScene("SampleScene 2");
+        }
     }
 
     public void responta01() {
@@ -262,5 +268,12 @@ public class GamerManager : MonoBehaviour {
         Application.Quit();
     }
 
+    public void instrucoesLigar() {
+        instrucoes.SetActive(true);
+    }
+
+    public void fecharInstrucoes() {
+        instrucoes.SetActive(false);
+    }
 
 }
