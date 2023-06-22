@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class IntroducaoJogo : MonoBehaviour
 {
@@ -8,6 +9,9 @@ public class IntroducaoJogo : MonoBehaviour
     public GameObject[] passarDireita;
     public GameObject[] passarEsquerda;
     public int acrescimo;
+
+    public GameObject painelInstrucoes;
+    public GameObject painelCreditos;
     // Start is called before the first frame update
     void Start()
     {
@@ -43,5 +47,28 @@ public class IntroducaoJogo : MonoBehaviour
 
 
 
+    }
+
+    public void painelInstrucoesFechar() {
+        painelInstrucoes.SetActive(false);
+    }
+
+    public void painelInstrucsoAbrir() {
+        painelInstrucoes.SetActive(true);
+    }
+
+    public void painelCreditosAbrir() {
+        painelCreditos.SetActive(true);
+    }
+    public void painelCreditosFechar() {
+        painelCreditos.SetActive(false);
+    }
+
+    public void iniciarJogos() {
+        SceneManager.LoadScene("SampleScene 5");
+    }
+
+    public void sairJogo() {
+        Application.Quit();
     }
 }

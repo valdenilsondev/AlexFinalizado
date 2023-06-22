@@ -74,9 +74,7 @@ public class GamerManager : MonoBehaviour {
 
 
     private void Update() {
-        if (Input.anyKey) {
-            SceneManager.LoadScene("SampleScene 2");
-        }
+       
     }
 
     public void responta01() {
