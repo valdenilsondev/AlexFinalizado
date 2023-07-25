@@ -48,6 +48,8 @@ public class GamerManager : MonoBehaviour {
     public GameObject credtos;
     public GameObject instrucoes;
 
+    public string nomeScena;
+
 
     private void Start() {
 
@@ -272,6 +274,13 @@ public class GamerManager : MonoBehaviour {
 
     public void fecharInstrucoes() {
         instrucoes.SetActive(false);
+    }
+
+    public void iniciarJogo(string nomeSsena) {
+
+        nomeScena = nomeSsena;
+
+        SceneManager.LoadScene(nomeScena);
     }
 
 }

@@ -42,7 +42,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -127,7 +127,28 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Imagem15_3
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 89
+        width: 181
+        height: 183
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebf0c1fe3cb7bb54cb759095145e120b
+      internalID: -109859656
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []
@@ -138,7 +159,21 @@ TextureImporter:
     edges: []
     weights: []
     secondaryTextures: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Imagem15_5: 945194489
+      Imagem15_2: -1968527673
+      Imagem15_1: -751964303
+      Imagem15_9: 972687139
+      Imagem15_8: -1456849259
+      Imagem15_12: -314397372
+      Imagem15_7: -220948263
+      Imagem15_11: 1356060287
+      Imagem15_6: 1418227877
+      Imagem15_0: -14837912
+      Imagem15_3: -109859656
+      Imagem15_10: -96542924
+      Imagem15_13: 1192207651
+      Imagem15_4: -1546618157
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0

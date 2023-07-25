@@ -43,6 +43,8 @@ public class inputField : MonoBehaviour
 
     private GamerManager _GameManager;
 
+
+    private bool teste;
     private void Start() {
         _infoCadeado = FindObjectOfType(typeof(infoCadeado)) as infoCadeado;
 
@@ -59,6 +61,7 @@ public class inputField : MonoBehaviour
 
 
         if (iniciarCacaPalavra == true) {
+
 
             descrescimoSegundo += Time.deltaTime;
 
@@ -106,7 +109,7 @@ public class inputField : MonoBehaviour
                 txtMinutos.text = Minutos.ToString("0");
 
             }
-            else if (decrescimotempoMinutos < 0) {
+            else if (decrescimotempoMinutos < 0 ) {
 
                 Minutos = 0;
 
@@ -121,6 +124,8 @@ public class inputField : MonoBehaviour
                 painelGameOver.SetActive(true);
 
                 iniciarCacaPalavra = false;
+
+                
 
             }
 
@@ -516,8 +521,20 @@ public class inputField : MonoBehaviour
 
 
     public void fecharPainelGameOver() {
-        painelGameOver.SetActive(false);
+
         iniciarCacaPalavra = true;
+        painelGameOver.SetActive(false);
+        tempo = false;
+        tempoAtual = 130;
+       
+        descrescimoSegundo = 0;
+
+        descrecimoMinutos = 0;
+
+
+
+        
+
     }
 
     public void iniciarJogo() {

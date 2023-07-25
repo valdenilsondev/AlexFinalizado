@@ -12,6 +12,8 @@ public class IntroducaoJogo : MonoBehaviour
 
     public GameObject painelInstrucoes;
     public GameObject painelCreditos;
+
+    public string nomeScene;
     // Start is called before the first frame update
     void Start()
     {
@@ -64,8 +66,10 @@ public class IntroducaoJogo : MonoBehaviour
         painelCreditos.SetActive(false);
     }
 
-    public void iniciarJogos() {
-        SceneManager.LoadScene("SampleScene 5");
+    public void iniciarJogos(string nomeCene) {
+
+        nomeScene = nomeCene;
+        SceneManager.LoadScene(nomeScene);
     }
 
     public void sairJogo() {

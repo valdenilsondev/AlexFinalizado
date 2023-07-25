@@ -140,17 +140,6 @@ public class AssociarPalavras : MonoBehaviour
 
     public void fecharPainelGameOver() {
         painelGameOver.SetActive(false);
-        for (int i = 0; i < 3; i++) {
-            botao01[i].interactable = true;
-            botao02[i].interactable = true;
-            botao03[i].interactable = true;
-            botao01[i].image.color = Color.white;
-            botao02[i].image.color = Color.white;
-            botao03[i].image.color = Color.white;
-        }
-        primeiraRespostaCorreta = false;
-        segundaRespostaCorreta = false;
-        terceiraRespostaCorreta = false;
     }
 
     public void restart() {

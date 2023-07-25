@@ -5,16 +5,25 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/StartScreen.unity
     guid: 987d5374362e5c34e825702d9634b5c1
   - enabled: 0
     path: Assets/Scenes/SampleScene 2.unity
     guid: 883a4d841067e0e4f9f2e4b53acf44e3
   - enabled: 0
-    path: Assets/Scenes/SampleScene 4.unity
-    guid: f205a6bfff3fd2d4383a8b1056b1c95f
+    path: Assets/Scenes/SampleScene 6.unity
+    guid: 590bc4ff742928846bd817bbab2c070b
   - enabled: 1
-    path: Assets/Scenes/SampleScene 5.unity
-    guid: 7b8411608b60a9e4a9513783fb0a88d2
+    path: Assets/Scenes/Guardioes das Galaxia/StarCreen.unity
+    guid: 1bf274d338d3ccf4d91b9ecadbe3b698
+  - enabled: 1
+    path: Assets/Scenes/Guardioes das Galaxia/Baby Groot.unity
+    guid: b8c2a198b5b6f714491de624294d0bd0
+  - enabled: 1
+    path: Assets/Scenes/Guardioes das Galaxia/Rocket Raccoon.unity
+    guid: 3333c5611ed2b224ba9a4c8e4faa645d
+  - enabled: 1
+    path: Assets/Scenes/Guardioes das Galaxia/Baby Groot Gigante.unity
+    guid: a10be642cd40ff042b31a582d6cb7eb8
   m_configObjects: {}
